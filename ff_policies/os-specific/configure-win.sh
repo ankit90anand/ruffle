@@ -19,7 +19,7 @@ select yn in "Unsure" "Yes" "No"; do
     esac
 done
 
-POLICY_FILE_NAME="policies.json"
+POLICY_FILE_NAME="./resources/policies.json"
 POLICY_PATH="${FF_INSTALL_PATH}/distribution"
 
 echo "*** Required root privledges ***"
