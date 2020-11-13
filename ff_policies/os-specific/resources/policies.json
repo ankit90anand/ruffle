@@ -1,0 +1,9 @@
+{
+  "policies": {
+    "DisableAppUpdate": true,
+    "FlashPlugin": {
+      "Default": true,
+      "Locked": true
+    }
+  }
+}
