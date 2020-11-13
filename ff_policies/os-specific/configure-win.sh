@@ -10,22 +10,9 @@ break;;
     esac
 done
 
-echo "Confirm if you have Flash installed:"
-select yn in "Unsure" "Yes" "No"; do
-    case $yn in
-        Unsure ) echo "Visit https://helpx.adobe.com/in/flash-player.html"; exit;;
-        Yes ) break;;
-		No ) exit;;
-    esac
-done
+source "modules/isFlashInstalled.sh"
 
 POLICY_FILE_NAME="./resources/policies.json"
 POLICY_PATH="${FF_INSTALL_PATH}/distribution"
 
-echo "*** Required root privledges ***"
-
-sudo rm -rf "${POLICY_PATH}"
-sudo mkdir -p "$POLICY_PATH"
-sudo cp "./${POLICY_FILE_NAME}" "${POLICY_PATH}"
-
-echo "Policies successfully applied to Firefox"
+source "modules/copyPolicies.sh"
